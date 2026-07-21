@@ -1,0 +1,9 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+.DS_Store
+/reports/*
+!/reports/.gdignore
+backend.so
+*.tscn*.tmp
+.codex_tmp/

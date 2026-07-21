@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dolqm5dcsidaf"]
+
+[ext_resource type="Texture2D" uid="uid://n3knj6p4xalw" path="res://assets/sprites/Spritesheets/spinner.png" id="1_a5jt0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxpa1"]
+atlas = ExtResource("1_a5jt0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpgia"]
+atlas = ExtResource("1_a5jt0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c8ex"]
+atlas = ExtResource("1_a5jt0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41k5x"]
+atlas = ExtResource("1_a5jt0")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m175h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxpa1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpgia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c8ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41k5x")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="AnimatedSprite2D" unique_id=2142244235]
+sprite_frames = SubResource("SpriteFrames_m175h")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.03972446

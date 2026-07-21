@@ -1,0 +1,700 @@
+[gd_scene format=3 uid="uid://b3g7d2n8q4m6"]
+
+[ext_resource type="Script" uid="uid://bt0va6q5xxdk5" path="res://main_menu/main_menu.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bahsk0p7rkii4" path="res://assets/sprites/fullbackground.png" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://bucg7iddgh37r" path="res://assets/sprites/POCKETBOUND logopixel.png" id="3_logo"]
+[ext_resource type="Texture2D" uid="uid://4yp1i67rxt4b" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_button_strip.tres" id="4_btn_n"]
+[ext_resource type="Texture2D" uid="uid://cbcxnuk6v0u7g" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_button_strip_right.tres" id="5_btn_a"]
+[ext_resource type="Texture2D" uid="uid://d70n710eftd" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_window.tres" id="6_gui_win"]
+[ext_resource type="Texture2D" uid="uid://b2gh77l6fubjr" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/scroll_panel_dark.tres" id="7_scroll"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_window_light.tres" id="8_5dd4i"]
+[ext_resource type="FontFile" uid="uid://7w30hgsdjs0l" path="res://assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="8_font"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/searchicon.tres" id="9_lgwnu"]
+[ext_resource type="FontFile" uid="uid://pnbgyluhlwbo" path="res://assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="9_title_font"]
+[ext_resource type="FontFile" uid="uid://didk5dghgkea0" path="res://assets/Fonts/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="12_rcqid"]
+[ext_resource type="Texture2D" uid="uid://dbvxyhlacu4x7" path="res://assets/sprites/Spritesheets/discordbutton.png" id="13_1ajci"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_n"]
+texture = ExtResource("4_btn_n")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_a"]
+texture = ExtResource("5_btn_a")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme_lgwnu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_field"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
+bg_color = Color(0.188235, 0.384314, 0.188235, 1)
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7b55j"]
+texture = ExtResource("4_btn_n")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="MainMenu" type="CanvasLayer" unique_id=330331649]
+script = ExtResource("1_script")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=251896152]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = -100
+texture_filter = 1
+texture = ExtResource("2_bg")
+
+[node name="UiRoot" type="Control" parent="." unique_id=612931184]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="MainMargin" type="MarginContainer" parent="UiRoot" unique_id=1094604258]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -45.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 20
+
+[node name="Layout" type="VBoxContainer" parent="UiRoot/MainMargin" unique_id=644516191]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="LogoCenter" type="CenterContainer" parent="UiRoot/MainMargin/Layout" unique_id=2104534580]
+custom_minimum_size = Vector2(0, 180)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Logo" type="TextureRect" parent="UiRoot/MainMargin/Layout/LogoCenter" unique_id=389715863]
+texture_filter = 1
+custom_minimum_size = Vector2(624, 89)
+layout_mode = 2
+texture = ExtResource("3_logo")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="ContentRow" type="HBoxContainer" parent="UiRoot/MainMargin/Layout" unique_id=1940217752]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 28
+
+[node name="LeftSpacer" type="Control" parent="UiRoot/MainMargin/Layout/ContentRow" unique_id=375187909]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.35
+
+[node name="MenuColumn" type="VBoxContainer" parent="UiRoot/MainMargin/Layout/ContentRow" unique_id=1431355176]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SinglePlayerBtn" type="Button" parent="UiRoot/MainMargin/Layout/ContentRow/MenuColumn" unique_id=673303604]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(300, 54)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Campaign"
+
+[node name="CreatorBtn" type="Button" parent="UiRoot/MainMargin/Layout/ContentRow/MenuColumn" unique_id=1539664678]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(300, 54)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Level Creator"
+
+[node name="CommunityBtn" type="Button" parent="UiRoot/MainMargin/Layout/ContentRow/MenuColumn" unique_id=1808981290]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(300, 54)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Community Levels"
+
+[node name="CreditsBtn" type="Button" parent="UiRoot/MainMargin/Layout/ContentRow/MenuColumn" unique_id=964796330]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(300, 54)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Credits"
+
+[node name="OptionsBtn" type="Button" parent="UiRoot/MainMargin/Layout/ContentRow/MenuColumn" unique_id=406929279]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(300, 54)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Options"
+
+[node name="QuitBtn" type="Button" parent="UiRoot/MainMargin/Layout/ContentRow/MenuColumn" unique_id=517233282]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(300, 54)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Quit"
+
+[node name="LogoutBtn" type="Button" parent="UiRoot/MainMargin/Layout/ContentRow/MenuColumn" unique_id=1081948527]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(300, 54)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Logout"
+
+[node name="StatusLabel" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/MenuColumn" unique_id=555009539]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 18
+text = "Loading profile..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MidSpacer" type="Control" parent="UiRoot/MainMargin/Layout/ContentRow" unique_id=1982682125]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+
+[node name="FriendsPanel" type="NinePatchRect" parent="UiRoot/MainMargin/Layout/ContentRow" unique_id=224533451]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(420, 520)
+layout_mode = 2
+texture = ExtResource("8_5dd4i")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel" unique_id=1422906758]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoginLabel" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer" unique_id=271853983]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 24
+text = "Logged in as
+loading..."
+horizontal_alignment = 1
+
+[node name="FriendsPanelMargin" type="MarginContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer" unique_id=1672368363]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin" unique_id=1376434662]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_gui_win")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="MarginContainer" type="MarginContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect" unique_id=1724508519]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FriendsColumn" type="VBoxContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer" unique_id=832108840]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="FriendLookupRow" type="HBoxContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn" unique_id=721865910]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="SearchHeader" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendLookupRow" unique_id=1593116156]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 20
+text = "Find Friends"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendLookupRow" unique_id=726983561]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_5dd4i")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="FriendLookupField" type="LineEdit" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendLookupRow/NinePatchRect" unique_id=508912172]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = -9.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lgwnu")
+theme_override_colors/font_color = Color(0.05882353, 0.21960784, 0.0627451, 1)
+theme_override_colors/font_placeholder_color = Color(0.05882353, 0.21960784, 0.0627451, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_field")
+theme_override_styles/focus = SubResource("StyleBoxFlat_field")
+placeholder_text = "..."
+
+[node name="FriendLookupBtn" type="Button" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendLookupRow" unique_id=1017134984]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(38, 38)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+icon = ExtResource("9_lgwnu")
+
+[node name="FriendSearchContainer" type="VBoxContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn" unique_id=1263252664]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="FriendLookupStatus" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendSearchContainer" unique_id=1559461191]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 14
+
+[node name="FriendLookupResults" type="VBoxContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendSearchContainer" unique_id=436354896]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="FriendListContainer" type="VBoxContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn" unique_id=21331265]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="FriendsHeader" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendListContainer" unique_id=563344682]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+theme_override_fonts/font = ExtResource("9_title_font")
+theme_override_font_sizes/font_size = 24
+text = "Friends"
+horizontal_alignment = 1
+
+[node name="FriendsScopeLabel" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendListContainer" unique_id=1302359191]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 16
+text = "Community scope: all friends"
+autowrap_mode = 3
+
+[node name="ListFrame" type="NinePatchRect" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendListContainer" unique_id=2110749554]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("7_scroll")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ListTint" type="ColorRect" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendListContainer/ListFrame" unique_id=2120232948]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.188235, 0.384314, 0.188235, 1)
+
+[node name="ListMargin" type="MarginContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendListContainer/ListFrame" unique_id=871722138]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ListScroll" type="ScrollContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendListContainer/ListFrame/ListMargin" unique_id=1486716130]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FriendsContainer" type="VBoxContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/FriendListContainer/ListFrame/ListMargin/ListScroll" unique_id=752565555]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="AccountSetupForm" type="VBoxContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn" unique_id=1474996875]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="SetupTitle" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/AccountSetupForm" unique_id=1456240399]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("9_title_font")
+theme_override_font_sizes/font_size = 22
+text = "Set Up Your Account"
+horizontal_alignment = 1
+
+[node name="SetupDesc" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/AccountSetupForm" unique_id=1731587860]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 16
+text = "Link an email to find friends
+and access community features."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="SetupUsernameField" type="LineEdit" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/AccountSetupForm" unique_id=1570474573]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.545098, 0.67451, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_field")
+theme_override_styles/focus = SubResource("StyleBoxFlat_field")
+placeholder_text = "Username"
+
+[node name="SetupUsernameStatus" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/AccountSetupForm" unique_id=1262390314]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 14
+
+[node name="SetupEmailField" type="LineEdit" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/AccountSetupForm" unique_id=1659749136]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.545098, 0.67451, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_field")
+theme_override_styles/focus = SubResource("StyleBoxFlat_field")
+placeholder_text = "Email"
+
+[node name="SetupEmailStatus" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/AccountSetupForm" unique_id=2137791185]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 14
+
+[node name="SetupPasswordField" type="LineEdit" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/AccountSetupForm" unique_id=934313247]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.545098, 0.67451, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_field")
+theme_override_styles/focus = SubResource("StyleBoxFlat_field")
+placeholder_text = "Password"
+secret = true
+
+[node name="SetupPasswordStatus" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/AccountSetupForm" unique_id=946676112]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 14
+
+[node name="SetupErrorLabel" type="Label" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/AccountSetupForm" unique_id=1115905730]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+
+[node name="SetupSubmitBtn" type="Button" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/FriendsPanelMargin/NinePatchRect/MarginContainer/FriendsColumn/AccountSetupForm" unique_id=1498141405]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(200, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+disabled = true
+text = "Link Account"
+
+[node name="MarginContainer" type="MarginContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer" unique_id=525167603]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/MarginContainer" unique_id=1620350456]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="DiscordBtn" type="Button" parent="UiRoot/MainMargin/Layout/ContentRow/FriendsPanel/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1180361896]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.19215687, 0.38431373, 0.1882353, 1)
+theme_override_colors/font_hover_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+theme_override_fonts/font = ExtResource("12_rcqid")
+theme_override_icons/icon = ExtResource("13_1ajci")
+theme_override_styles/normal = SubResource("StyleBoxTexture_7b55j")
+text = "Join Caster Cat's discord server!"
+
+[node name="FooterAnchor" type="MarginContainer" parent="UiRoot" unique_id=818488478]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -8.0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="FooterCenter" type="CenterContainer" parent="UiRoot/FooterAnchor" unique_id=369327230]
+layout_mode = 2
+
+[node name="Footer" type="Label" parent="UiRoot/FooterAnchor/FooterCenter" unique_id=323466191]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 16
+text = "A game by Heroic Labs - Powered by Nakama and Heroic Cloud"
+
+[node name="DialogOverlay" type="ColorRect" parent="UiRoot" unique_id=598930608]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.058824, 0.219608, 0.058824, 1)
+
+[node name="DialogCenter" type="CenterContainer" parent="UiRoot/DialogOverlay" unique_id=1849067445]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dialog" type="NinePatchRect" parent="UiRoot/DialogOverlay/DialogCenter" unique_id=1572465816]
+texture_filter = 1
+custom_minimum_size = Vector2(760, 420)
+layout_mode = 2
+texture = ExtResource("6_gui_win")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="DialogMargin" type="MarginContainer" parent="UiRoot/DialogOverlay/DialogCenter/Dialog" unique_id=1789508361]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="DialogColumn" type="VBoxContainer" parent="UiRoot/DialogOverlay/DialogCenter/Dialog/DialogMargin" unique_id=562699333]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="TopRow" type="HBoxContainer" parent="UiRoot/DialogOverlay/DialogCenter/Dialog/DialogMargin/DialogColumn" unique_id=1765250621]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="DialogTitle" type="Label" parent="UiRoot/DialogOverlay/DialogCenter/Dialog/DialogMargin/DialogColumn/TopRow" unique_id=268480966]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("9_title_font")
+theme_override_font_sizes/font_size = 30
+text = "Levels"
+
+[node name="DialogCloseBtn" type="Button" parent="UiRoot/DialogOverlay/DialogCenter/Dialog/DialogMargin/DialogColumn/TopRow" unique_id=69583961]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(150, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("8_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Close"
+
+[node name="BodyScroll" type="ScrollContainer" parent="UiRoot/DialogOverlay/DialogCenter/Dialog/DialogMargin/DialogColumn" unique_id=603392401]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DialogBody" type="VBoxContainer" parent="UiRoot/DialogOverlay/DialogCenter/Dialog/DialogMargin/DialogColumn/BodyScroll" unique_id=992027887]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6

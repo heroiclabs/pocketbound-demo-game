@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bo15h3gnquhwi"]
+
+[ext_resource type="Texture2D" uid="uid://dqe18hm8jlwav" path="res://assets/sprites/Spritesheets/portal_animated.png" id="1_7jsct"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nodrp"]
+atlas = ExtResource("1_7jsct")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5adh"]
+atlas = ExtResource("1_7jsct")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gbni"]
+atlas = ExtResource("1_7jsct")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq63t"]
+atlas = ExtResource("1_7jsct")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1em2l"]
+atlas = ExtResource("1_7jsct")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86rip"]
+atlas = ExtResource("1_7jsct")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6n30i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nodrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5adh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gbni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq63t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1em2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86rip")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="AnimatedSprite2D" unique_id=1420508044]
+sprite_frames = SubResource("SpriteFrames_6n30i")
+animation = &"idle"

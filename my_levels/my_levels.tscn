@@ -1,0 +1,361 @@
+[gd_scene format=3 uid="uid://b4my5lvl6sc78"]
+
+[ext_resource type="Script" uid="uid://cfddc4iwb3b2u" path="res://my_levels/my_levels.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bahsk0p7rkii4" path="res://assets/sprites/fullbackground.png" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://4yp1i67rxt4b" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_button_strip.tres" id="3_btn_n"]
+[ext_resource type="Texture2D" uid="uid://cbcxnuk6v0u7g" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_button_strip_right.tres" id="4_btn_a"]
+[ext_resource type="FontFile" uid="uid://7w30hgsdjs0l" path="res://assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="5_font"]
+[ext_resource type="FontFile" uid="uid://pnbgyluhlwbo" path="res://assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="6_title_font"]
+[ext_resource type="Texture2D" uid="uid://d70n710eftd" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_window.tres" id="7_gui_win"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/scroll_panel_dark.tres" id="8_scroll"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_n"]
+texture = ExtResource("3_btn_n")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_a"]
+texture = ExtResource("4_btn_a")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="MyLevels" type="CanvasLayer" unique_id=428916644]
+script = ExtResource("1_script")
+
+[node name="UiRoot" type="Control" parent="." unique_id=783851514]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Background" type="TextureRect" parent="UiRoot" unique_id=1099916687]
+visible = false
+texture_filter = 1
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Outer" type="MarginContainer" parent="UiRoot" unique_id=4374911]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 20
+
+[node name="Main" type="VBoxContainer" parent="UiRoot/Outer" unique_id=535953991]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="TitleRow" type="CenterContainer" parent="UiRoot/Outer/Main" unique_id=1321145904]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Title" type="Label" parent="UiRoot/Outer/Main/TitleRow" unique_id=1179672988]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+theme_override_fonts/font = ExtResource("6_title_font")
+theme_override_font_sizes/font_size = 52
+text = "My levels"
+
+[node name="Content" type="HBoxContainer" parent="UiRoot/Outer/Main" unique_id=1848380273]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="LeftPanel" type="NinePatchRect" parent="UiRoot/Outer/Main/Content" unique_id=845252506]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.6
+texture = ExtResource("7_gui_win")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="LeftInner" type="MarginContainer" parent="UiRoot/Outer/Main/Content/LeftPanel" unique_id=1315200274]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="LevelScroll" type="ScrollContainer" parent="UiRoot/Outer/Main/Content/LeftPanel/LeftInner" unique_id=1540611494]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LevelsContainer" type="VBoxContainer" parent="UiRoot/Outer/Main/Content/LeftPanel/LeftInner/LevelScroll" unique_id=1281959709]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="RightPanel" type="NinePatchRect" parent="UiRoot/Outer/Main/Content" unique_id=1431859030]
+texture_filter = 1
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+texture = ExtResource("7_gui_win")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="RightInner" type="MarginContainer" parent="UiRoot/Outer/Main/Content/RightPanel" unique_id=581099116]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="RightCol" type="VBoxContainer" parent="UiRoot/Outer/Main/Content/RightPanel/RightInner" unique_id=546561902]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="LbHeaderLabel" type="Label" parent="UiRoot/Outer/Main/Content/RightPanel/RightInner/RightCol" unique_id=849467233]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("6_title_font")
+theme_override_font_sizes/font_size = 22
+text = "Leaderboards"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="FilterRow" type="HBoxContainer" parent="UiRoot/Outer/Main/Content/RightPanel/RightInner/RightCol" unique_id=1006440737]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="FilterAllTime" type="Button" parent="UiRoot/Outer/Main/Content/RightPanel/RightInner/RightCol/FilterRow" unique_id=770073026]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "All time"
+
+[node name="FilterThisWeek" type="Button" parent="UiRoot/Outer/Main/Content/RightPanel/RightInner/RightCol/FilterRow" unique_id=1407497046]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.55)
+texture_filter = 1
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "This week"
+
+[node name="FilterFriends" type="Button" parent="UiRoot/Outer/Main/Content/RightPanel/RightInner/RightCol/FilterRow" unique_id=1639021905]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.55)
+texture_filter = 1
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Friends"
+
+[node name="LbFrame" type="NinePatchRect" parent="UiRoot/Outer/Main/Content/RightPanel/RightInner/RightCol" unique_id=864636540]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("8_scroll")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="LbTint" type="ColorRect" parent="UiRoot/Outer/Main/Content/RightPanel/RightInner/RightCol/LbFrame" unique_id=398697214]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.188235, 0.384314, 0.188235, 1)
+
+[node name="LbInner" type="MarginContainer" parent="UiRoot/Outer/Main/Content/RightPanel/RightInner/RightCol/LbFrame" unique_id=760112035]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="LbScroll" type="ScrollContainer" parent="UiRoot/Outer/Main/Content/RightPanel/RightInner/RightCol/LbFrame/LbInner" unique_id=444294469]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeaderboardList" type="VBoxContainer" parent="UiRoot/Outer/Main/Content/RightPanel/RightInner/RightCol/LbFrame/LbInner/LbScroll" unique_id=2084427945]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="BottomBar" type="HBoxContainer" parent="UiRoot/Outer/Main" unique_id=2072144413]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MenuBtn" type="Button" parent="UiRoot/Outer/Main/BottomBar" unique_id=8321425]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(120, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Back"
+
+[node name="NewLevelBtn" type="Button" parent="UiRoot/Outer/Main/BottomBar" unique_id=871531442]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(140, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "New Level"
+
+[node name="Spacer" type="Control" parent="UiRoot/Outer/Main/BottomBar" unique_id=1241822867]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TestBtn" type="Button" parent="UiRoot/Outer/Main/BottomBar" unique_id=1960002771]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(110, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+disabled = true
+text = "Test"
+
+[node name="EditBtn" type="Button" parent="UiRoot/Outer/Main/BottomBar" unique_id=1915771367]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(110, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+disabled = true
+text = "Edit"
+
+[node name="PublishBtn" type="Button" parent="UiRoot/Outer/Main/BottomBar" unique_id=83813463]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(120, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+disabled = true
+text = "Publish"
+
+[node name="DeleteBtn" type="Button" parent="UiRoot/Outer/Main/BottomBar" unique_id=1843339051]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(110, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+disabled = true
+text = "Delete"

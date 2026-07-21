@@ -1,0 +1,347 @@
+[gd_scene format=3 uid="uid://df31vb0n4pnwk"]
+
+[ext_resource type="Texture2D" uid="uid://bahsk0p7rkii4" path="res://assets/sprites/fullbackground.png" id="1_hywd1"]
+[ext_resource type="LabelSettings" uid="uid://fjaq0q7flr4p" path="res://assets/Fonts/Title text.tres" id="2_tqy5q"]
+[ext_resource type="LabelSettings" uid="uid://0686ruc5dftj" path="res://assets/Fonts/basic text.tres" id="3_hywd1"]
+[ext_resource type="FontFile" uid="uid://7w30hgsdjs0l" path="res://assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="4_cws7i"]
+[ext_resource type="Texture2D" uid="uid://bucg7iddgh37r" path="res://assets/sprites/POCKETBOUND logopixel.png" id="5_tqy5q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_u3xxf"]
+font = ExtResource("4_cws7i")
+font_size = 22
+font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 1.1110001
+anchor_bottom = 1.1110001
+offset_right = 0.12792969
+offset_bottom = 0.07196045
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hywd1")
+expand_mode = 5
+
+[node name="WelcomeScreen" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.24200001
+anchor_right = 0.8
+anchor_bottom = 0.657
+offset_top = -0.2400055
+offset_bottom = -0.040008545
+region_rect = Rect2(1, 0, 95, 96)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WelcomeScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_left = 105.00397
+offset_right = -105.20801
+offset_bottom = -2.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="WelcomeScreen/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "WELCOME TO POCKETBOUND! 
+WHAT'S YOUR NAME?"
+label_settings = ExtResource("2_tqy5q")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="WelcomeScreen/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "We use your name to create an account for you to play, create and rank community levels."
+label_settings = ExtResource("3_hywd1")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="WelcomeScreen/VBoxContainer"]
+custom_minimum_size = Vector2(300, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "Your name"
+wrap_mode = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="WelcomeScreen/VBoxContainer"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="WelcomeScreen/VBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0039673
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+label_settings = SubResource("LabelSettings_u3xxf")
+horizontal_alignment = 1
+
+[node name="MainMenu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="VBoxContainer" parent="MainMenu"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 76.0
+offset_top = 49.5
+offset_right = -164.0
+offset_bottom = -70.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 44
+
+[node name="Logo" type="TextureRect" parent="MainMenu/Content"]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+texture = ExtResource("5_tqy5q")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="SinglePlayer" type="Button" parent="MainMenu/Content"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MainMenu/Content/SinglePlayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0039673
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Single Player"
+label_settings = SubResource("LabelSettings_u3xxf")
+horizontal_alignment = 1
+
+[node name="create" type="Button" parent="MainMenu/Content"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MainMenu/Content/create"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0039673
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level Editor"
+label_settings = SubResource("LabelSettings_u3xxf")
+horizontal_alignment = 1
+
+[node name="Community" type="Button" parent="MainMenu/Content"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MainMenu/Content/Community"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0039673
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Community Levels"
+label_settings = SubResource("LabelSettings_u3xxf")
+horizontal_alignment = 1
+
+[node name="Credits" type="Button" parent="MainMenu/Content"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MainMenu/Content/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0039673
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_u3xxf")
+horizontal_alignment = 1
+
+[node name="Quit" type="Button" parent="MainMenu/Content"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MainMenu/Content/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0039673
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+label_settings = SubResource("LabelSettings_u3xxf")
+horizontal_alignment = 1
+
+[node name="LevelSelector" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="VBoxContainer" parent="LevelSelector"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 76.0
+offset_top = 49.5
+offset_right = -164.0
+offset_bottom = -70.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 44
+
+[node name="Logo" type="TextureRect" parent="LevelSelector/Content"]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+texture = ExtResource("5_tqy5q")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="SinglePlayer" type="Button" parent="LevelSelector/Content"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="LevelSelector/Content/SinglePlayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0039673
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Single Player"
+label_settings = SubResource("LabelSettings_u3xxf")
+horizontal_alignment = 1
+
+[node name="create" type="Button" parent="LevelSelector/Content"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="LevelSelector/Content/create"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0039673
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level Editor"
+label_settings = SubResource("LabelSettings_u3xxf")
+horizontal_alignment = 1
+
+[node name="Community" type="Button" parent="LevelSelector/Content"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="LevelSelector/Content/Community"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0039673
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Community Levels"
+label_settings = SubResource("LabelSettings_u3xxf")
+horizontal_alignment = 1
+
+[node name="Credits" type="Button" parent="LevelSelector/Content"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="LevelSelector/Content/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0039673
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_u3xxf")
+horizontal_alignment = 1
+
+[node name="Quit" type="Button" parent="LevelSelector/Content"]
+custom_minimum_size = Vector2(250, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="LevelSelector/Content/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0039673
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+label_settings = SubResource("LabelSettings_u3xxf")
+horizontal_alignment = 1

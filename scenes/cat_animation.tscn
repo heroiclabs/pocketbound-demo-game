@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bjw5tdgmlk1jr"]
+
+[ext_resource type="Texture2D" uid="uid://b4q4fa08sxtcc" path="res://assets/sprites/Spritesheets/cat_animated.png" id="1_crus7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq1ft"]
+atlas = ExtResource("1_crus7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcaxp"]
+atlas = ExtResource("1_crus7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gm5a"]
+atlas = ExtResource("1_crus7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceqij"]
+atlas = ExtResource("1_crus7")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgmp5"]
+atlas = ExtResource("1_crus7")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rvri"]
+atlas = ExtResource("1_crus7")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8mk2"]
+atlas = ExtResource("1_crus7")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s66j4"]
+atlas = ExtResource("1_crus7")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fblj5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq1ft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcaxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gm5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ceqij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgmp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rvri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8mk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s66j4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="AnimatedSprite2D" unique_id=360475008]
+sprite_frames = SubResource("SpriteFrames_fblj5")
+animation = &"idle"

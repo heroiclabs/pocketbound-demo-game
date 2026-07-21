@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7draggable01"]
+
+[ext_resource type="Script" path="res://level_player/scripts/placeable_object.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://icon.svg" id="2_icon"]
+
+[node name="PlaceableObject" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_icon")

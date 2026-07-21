@@ -1,0 +1,174 @@
+[gd_scene format=3 uid="uid://cvm8r6i0c7aek"]
+
+[ext_resource type="Script" uid="uid://br51615fc65ft" path="res://auth/custom_account_login.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bahsk0p7rkii4" path="res://assets/sprites/fullbackground.png" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://4yp1i67rxt4b" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_button_strip.tres" id="3_btn_n"]
+[ext_resource type="Texture2D" uid="uid://cbcxnuk6v0u7g" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_button_strip_right.tres" id="4_btn_a"]
+[ext_resource type="FontFile" uid="uid://7w30hgsdjs0l" path="res://assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="5_font"]
+[ext_resource type="FontFile" uid="uid://pnbgyluhlwbo" path="res://assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="6_title_font"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_field"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.545098, 0.67451, 0.058824, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.188235, 0.384314, 0.188235, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_n"]
+texture = ExtResource("3_btn_n")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_a"]
+texture = ExtResource("4_btn_a")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="CustomAccountLogin" type="CanvasLayer" unique_id=901670134]
+layer = 120
+script = ExtResource("1_script")
+
+[node name="UiRoot" type="Control" parent="." unique_id=180772660]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Background" type="TextureRect" parent="UiRoot" unique_id=722840286]
+texture_filter = 1
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="UiRoot" unique_id=208770384]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Form" type="VBoxContainer" parent="UiRoot/CenterContainer" unique_id=2041441538]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="UiRoot/CenterContainer/Form" unique_id=1774117647]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+theme_override_fonts/font = ExtResource("6_title_font")
+theme_override_font_sizes/font_size = 40
+text = "Log In to Pocketbound"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Subtitle" type="Label" parent="UiRoot/CenterContainer/Form" unique_id=1733478962]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.545098, 0.67451, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 24
+text = "Enter your username and password."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Spacer" type="Control" parent="UiRoot/CenterContainer/Form" unique_id=1275663549]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="UsernameField" type="LineEdit" parent="UiRoot/CenterContainer/Form" unique_id=1569814548]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_field")
+theme_override_styles/focus = SubResource("StyleBoxFlat_field")
+placeholder_text = "Username"
+max_length = 128
+
+[node name="PasswordField" type="LineEdit" parent="UiRoot/CenterContainer/Form" unique_id=841374808]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 56)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_placeholder_color = Color(0.188235, 0.384314, 0.188235, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_field")
+theme_override_styles/focus = SubResource("StyleBoxFlat_field")
+placeholder_text = "Password"
+secret = true
+
+[node name="PasswordStatus" type="Label" parent="UiRoot/CenterContainer/Form" unique_id=517486713]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="SubmitBtn" type="Button" parent="UiRoot/CenterContainer/Form" unique_id=1047751057]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(170, 52)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Enter"
+
+[node name="StatusLabel" type="Label" parent="UiRoot/CenterContainer/Form" unique_id=82474876]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 26
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CreateAccountBtn" type="Button" parent="UiRoot/CenterContainer/Form" unique_id=384165758]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Create Account"

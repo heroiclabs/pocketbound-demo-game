@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://depehyq1n6u4t"]
+
+[ext_resource type="Texture2D" uid="uid://drw6chyiphnij" path="res://assets/sprites/Spritesheets/backgroundbase.png" id="1_gejcq"]
+[ext_resource type="Script" path="res://scenes/space_background.gd" id="2_script"]
+
+[node name="SpaceBackground" type="Node2D" unique_id=1681995685]
+script = ExtResource("2_script")
+
+[node name="Fullbackground" type="Sprite2D" parent="." unique_id=891836481]
+position = Vector2(578, 329)
+scale = Vector2(72.12, 41.639996)
+texture = ExtResource("1_gejcq")
+
+[node name="StarParticles" type="CPUParticles2D" parent="." unique_id=1074261976]
+position = Vector2(577, 650)
+amount = 1000
+lifetime = 60.0
+preprocess = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(586.35, 1)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 50.0
+scale_amount_max = 4.0
+color = Color(0.1882353, 0.38431373, 0.1882353, 1)

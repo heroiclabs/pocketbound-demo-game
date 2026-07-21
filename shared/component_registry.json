@@ -1,0 +1,71 @@
+{
+  "version": "1",
+  "components": [
+    {
+      "id": "1",
+      "name": "walkable",
+      "kind": "tag"
+    },
+    {
+      "id": "2",
+      "name": "blocked",
+      "kind": "tag"
+    },
+    {
+      "id": "3",
+      "name": "start",
+      "kind": "tag"
+    },
+    {
+      "id": "4",
+      "name": "end",
+      "kind": "tag"
+    },
+    {
+      "id": "5",
+      "name": "north",
+      "kind": "direction",
+      "bit": "1"
+    },
+    {
+      "id": "6",
+      "name": "east",
+      "kind": "direction",
+      "bit": "2"
+    },
+    {
+      "id": "7",
+      "name": "south",
+      "kind": "direction",
+      "bit": "4"
+    },
+    {
+      "id": "8",
+      "name": "west",
+      "kind": "direction",
+      "bit": "8"
+    }
+  ],
+  "movement_rules": [
+    {
+      "id": "target_exists",
+      "phase": "move"
+    },
+    {
+      "id": "target_walkable",
+      "phase": "move"
+    },
+    {
+      "id": "target_not_blocked",
+      "phase": "move"
+    },
+    {
+      "id": "source_exit_dir_if_interior",
+      "phase": "move"
+    },
+    {
+      "id": "target_entry_dir_if_interior",
+      "phase": "move"
+    }
+  ]
+}

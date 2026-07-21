@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bf36rhohdgfjw"]
+
+[ext_resource type="Script" uid="uid://de4xfk1u1n272" path="res://level_creator/scripts/level_creator.gd" id="1_main"]
+[ext_resource type="Script" uid="uid://ds77jymo5reys" path="res://level_player/scripts/grid_manager.gd" id="2_grid_mgr"]
+[ext_resource type="Script" uid="uid://bb8gytgbwtnsc" path="res://level_creator/scripts/creator_grid_visual.gd" id="3_grid_vis"]
+[ext_resource type="Script" uid="uid://datwel2ig2qj3" path="res://level_creator/scripts/creator_drag_manager.gd" id="4_drag_mgr"]
+[ext_resource type="Script" uid="uid://c373brle5cesv" path="res://level_creator/scripts/tile_palette.gd" id="5_palette"]
+
+[node name="LevelCreator" type="CanvasLayer" unique_id=1488541106]
+script = ExtResource("1_main")
+
+[node name="GridManager" type="Node" parent="." unique_id=1398312045]
+script = ExtResource("2_grid_mgr")
+
+[node name="CreatorGridVisual" type="Node2D" parent="." unique_id=1981570980]
+script = ExtResource("3_grid_vis")
+
+[node name="CreatorDragManager" type="Node" parent="." unique_id=1059081405]
+script = ExtResource("4_drag_mgr")
+
+[node name="ObjectContainer" type="Node2D" parent="." unique_id=2124995054]
+
+[node name="TilePalette" type="PanelContainer" parent="." unique_id=1685494599]
+script = ExtResource("5_palette")

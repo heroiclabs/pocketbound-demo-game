@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://4roj6ps5phkr"]
+
+[sub_resource type="Curve" id="Curve_dym45"]
+_limits = [0.0, 24.32, 0.0, 1.0]
+_data = [Vector2(0.0038314164, 0.50249237), 0.0, 0.0, 0, 0, Vector2(0.5181992, 0.50562793), 0.0, 0.0, 0, 0, Vector2(1, 24.32), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_tbj6f"]
+offsets = PackedFloat32Array(0, 0.08888889, 0.65353537, 0.85050505)
+colors = PackedColorArray(0.60784316, 0.7372549, 0.05882353, 1, 0.54509807, 0.6745098, 0.05882353, 1, 0.1882353, 0.38431373, 0.1882353, 1, 0.05882353, 0.21960784, 0.05882353, 1)
+
+[sub_resource type="Gradient" id="Gradient_pvov7"]
+colors = PackedColorArray(0.1882353, 0.38431373, 0.1882353, 1, 0.54509807, 0.6745098, 0.05882353, 1)
+
+[node name="VFXPlacement2" type="Node2D" unique_id=1996696981]
+
+[node name="TopLeft" type="CPUParticles2D" parent="." unique_id=1676358214]
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 1.0
+emission_shape = 6
+emission_ring_inner_radius = 2.0
+emission_ring_radius = 5.0
+direction = Vector2(-1, -1)
+gravity = Vector2(0, 0)
+initial_velocity_max = 59.81
+linear_accel_min = 7.48
+linear_accel_max = 56.07
+tangential_accel_min = 9.72
+tangential_accel_max = 38.88
+damping_curve = SubResource("Curve_dym45")
+color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+color_ramp = SubResource("Gradient_tbj6f")
+color_initial_ramp = SubResource("Gradient_pvov7")
+
+[node name="TopRight" type="CPUParticles2D" parent="." unique_id=714454755]
+position = Vector2(22, 0)
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 1.0
+emission_shape = 6
+emission_ring_inner_radius = 2.0
+emission_ring_radius = 5.0
+direction = Vector2(1, -1)
+gravity = Vector2(0, 0)
+initial_velocity_max = 59.81
+linear_accel_min = 7.48
+linear_accel_max = 56.07
+tangential_accel_min = 9.72
+tangential_accel_max = 38.88
+damping_curve = SubResource("Curve_dym45")
+color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+color_ramp = SubResource("Gradient_tbj6f")
+color_initial_ramp = SubResource("Gradient_pvov7")
+
+[node name="BottomLeft" type="CPUParticles2D" parent="." unique_id=1550934194]
+position = Vector2(0, 22)
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 1.0
+emission_shape = 6
+emission_ring_inner_radius = 2.0
+emission_ring_radius = 5.0
+direction = Vector2(-1, 1)
+gravity = Vector2(0, 0)
+initial_velocity_max = 59.81
+linear_accel_min = 7.48
+linear_accel_max = 56.07
+tangential_accel_min = 9.72
+tangential_accel_max = 38.88
+damping_curve = SubResource("Curve_dym45")
+color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+color_ramp = SubResource("Gradient_tbj6f")
+color_initial_ramp = SubResource("Gradient_pvov7")
+
+[node name="BottomRight" type="CPUParticles2D" parent="." unique_id=1315889053]
+position = Vector2(22, 22)
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 1.0
+emission_shape = 6
+emission_ring_inner_radius = 2.0
+emission_ring_radius = 5.0
+direction = Vector2(1, 1)
+gravity = Vector2(0, 0)
+initial_velocity_max = 59.81
+linear_accel_min = 7.48
+linear_accel_max = 56.07
+tangential_accel_min = 9.72
+tangential_accel_max = 38.88
+damping_curve = SubResource("Curve_dym45")
+color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+color_ramp = SubResource("Gradient_tbj6f")
+color_initial_ramp = SubResource("Gradient_pvov7")

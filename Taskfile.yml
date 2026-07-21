@@ -1,0 +1,162 @@
+version: "3"
+
+vars:
+  MUTE_SOUND: "1"
+  TEST_TARGET: "res://test/integration"
+  GODOT_BIN:
+    sh: |
+      if [ -x "/Applications/Godot" ]; then
+        echo "/Applications/Godot"
+      elif [ -x "/Applications/Godot.app/Contents/MacOS/Godot" ]; then
+        echo "/Applications/Godot.app/Contents/MacOS/Godot"
+      else
+        echo "/Applications/Godot"
+      fi
+  GODOT_AUDIO_ARG:
+    sh: |
+      case "{{.MUTE_SOUND}}" in
+        1|true|TRUE|yes|YES|on|ON)
+          echo "--audio-driver Dummy"
+          ;;
+        *)
+          echo ""
+          ;;
+      esac
+  GODOT_TEMPLATE_VERSION:
+    sh: |
+      "{{.GODOT_BIN}}" --version | awk -F'.' '{print $1 "." $2 "." $3 "." $4}'
+  GODOT_TEMPLATE_TAG:
+    sh: |
+      echo "{{.GODOT_TEMPLATE_VERSION}}" | sed -E 's/\.([A-Za-z0-9_]+)$/-\1/'
+  GODOT_TEMPLATES_DIR:
+    sh: |
+      echo "$HOME/Library/Application Support/Godot/export_templates/{{.GODOT_TEMPLATE_VERSION}}"
+  GODOT_TEMPLATES_URL:
+    sh: |
+      echo "https://github.com/godotengine/godot/releases/download/{{.GODOT_TEMPLATE_TAG}}/Godot_v{{.GODOT_TEMPLATE_TAG}}_export_templates.tpz"
+
+tasks:
+  test:
+    desc: Run gdUnit4 tests (defaults to all integration tests; set TEST_TARGET to a file/path, e.g. res://test/integration/default_levels_localhost_integration_test.gd).
+    preconditions:
+      - sh: test -x "{{.GODOT_BIN}}"
+        msg: Godot binary not found or not executable at {{.GODOT_BIN}}
+      - sh: nc -z 127.0.0.1 7350
+        msg: "Nakama server is not reachable at 127.0.0.1:7350. Start it first (for example: docker compose up)."
+    cmds:
+      - ./addons/gdUnit4/runtest.sh --godot_binary "{{.GODOT_BIN}}" {{.GODOT_AUDIO_ARG}} -a "{{.TEST_TARGET}}" -c
+
+  "migrate:usernames-lowercase":
+    desc: One-time DB migration to normalize all existing usernames to lowercase (handles case-collision fallbacks).
+    preconditions:
+      - sh: test -f "scripts/sql/lowercase_usernames_migration.sql"
+        msg: scripts/sql/lowercase_usernames_migration.sql not found.
+      - sh: docker compose ps --status running postgres | grep -q "postgres"
+        msg: "PostgreSQL is not running. Start it first (for example: docker compose up -d)."
+    cmds:
+      - cat scripts/sql/lowercase_usernames_migration.sql | docker compose exec -T postgres psql -v ON_ERROR_STOP=1 -U postgres -d nakama
+
+  "build:templates":
+    desc: Ensure Godot export templates are installed.
+    internal: true
+    preconditions:
+      - sh: test -x "{{.GODOT_BIN}}"
+        msg: Godot binary not found or not executable at {{.GODOT_BIN}}
+      - sh: test -f "export_presets.cfg"
+        msg: export_presets.cfg not found in project root.
+    cmds:
+      - |
+        if [ -f "{{.GODOT_TEMPLATES_DIR}}/web_nothreads_release.zip" ] && [ -f "{{.GODOT_TEMPLATES_DIR}}/windows_release_x86_64.exe" ] && [ -f "{{.GODOT_TEMPLATES_DIR}}/macos.zip" ]; then
+          echo "Godot export templates already installed for {{.GODOT_TEMPLATE_VERSION}}."
+        else
+          tmpfile="$(mktemp -t godot_export_templates_XXXXXX.tpz)"
+          mkdir -p "{{.GODOT_TEMPLATES_DIR}}"
+          curl -L --fail -o "$tmpfile" "{{.GODOT_TEMPLATES_URL}}"
+          /usr/bin/bsdtar -xf "$tmpfile" -C "{{.GODOT_TEMPLATES_DIR}}" --strip-components 1
+          rm -f "$tmpfile"
+        fi
+      - test -f "{{.GODOT_TEMPLATES_DIR}}/web_nothreads_release.zip"
+      - test -f "{{.GODOT_TEMPLATES_DIR}}/windows_release_x86_64.exe"
+      - test -f "{{.GODOT_TEMPLATES_DIR}}/macos.zip"
+      - mkdir -p ../builds/MacOS ../builds/windows ../builds/html
+
+  "build:web":
+    desc: Export Web release build.
+    internal: true
+    deps: [build:templates]
+    cmds:
+      - |
+        set +e
+        "{{.GODOT_BIN}}" --headless --path . --export-release "Web"
+        code=$?
+        if [ -f "../builds/html/pocketbound alpha.html" ]; then
+          mv -f "../builds/html/pocketbound alpha.html" "../builds/html/index.html"
+        fi
+        if [ $code -ne 0 ] && [ ! -f "../builds/html/index.html" ]; then
+          exit $code
+        fi
+
+  "build:windows":
+    desc: Export Windows release build.
+    internal: true
+    deps: [build:templates]
+    cmds:
+      - |
+        set +e
+        "{{.GODOT_BIN}}" --headless --path . --export-release "Windows Desktop"
+        code=$?
+        if [ $code -ne 0 ] && [ ! -f "../builds/windows/pocketbound alpha.exe" ]; then
+          exit $code
+        fi
+
+  "build:mac":
+    desc: Export macOS release build.
+    internal: true
+    deps: [build:templates]
+    cmds:
+      - |
+        set +e
+        "{{.GODOT_BIN}}" --headless --path . --export-release "macOS"
+        code=$?
+        if [ $code -ne 0 ] && [ ! -f "../builds/MacOS/pocketbound alpha.dmg" ]; then
+          exit $code
+        fi
+
+  build:
+    desc: Export Godot release builds for Web, Windows, and macOS.
+    deps: [build:web, build:windows, build:mac]
+    cmds:
+      - |
+        rm -f ../builds/web.zip ../builds/windows.zip ../builds/macos.zip
+        rm -f "../builds/Pocketbound WEB.zip" "../builds/Pocketbound PC.zip" "../builds/Pocketbound MAC.zip"
+        (
+          cd ../builds
+          /usr/bin/zip -rq "Pocketbound WEB.zip" html
+          /usr/bin/zip -rq "Pocketbound PC.zip" windows
+          /usr/bin/zip -rq "Pocketbound MAC.zip" MacOS
+        )
+
+  "build:game":
+    desc: Alias for `task build`.
+    deps:
+      - build
+
+  deploy:
+    desc: Build all platforms and upload to itch.io using butler.
+    deps: [build]
+    vars:
+      BUTLER_BIN: "{{.HOME}}/Downloads/butler-darwin-arm64/butler"
+      ITCHIO_TARGET: "caster-cat/pocketbound"
+    preconditions:
+      - sh: test -x "{{.BUTLER_BIN}}"
+        msg: "butler not found at {{.BUTLER_BIN}}"
+      - sh: test -d "../builds/html"
+        msg: "Web build not found at ../builds/html. Run 'task build' first."
+      - sh: test -d "../builds/windows"
+        msg: "Windows build not found at ../builds/windows. Run 'task build' first."
+      - sh: test -d "../builds/MacOS"
+        msg: "macOS build not found at ../builds/MacOS. Run 'task build' first."
+    cmds:
+      - "{{.BUTLER_BIN}} push ../builds/html {{.ITCHIO_TARGET}}:html"
+      - "{{.BUTLER_BIN}} push ../builds/windows {{.ITCHIO_TARGET}}:windows"
+      - "{{.BUTLER_BIN}} push ../builds/MacOS {{.ITCHIO_TARGET}}:mac"

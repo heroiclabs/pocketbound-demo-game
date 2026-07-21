@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://c4hf6p8r2k5n"]
+
+[ext_resource type="Script" uid="uid://7kfsw3ve3fid" path="res://scenes/options_panel.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://d70n710eftd" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_window.tres" id="2_gui_win"]
+[ext_resource type="Texture2D" uid="uid://4yp1i67rxt4b" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_button_strip.tres" id="3_btn_n"]
+[ext_resource type="Texture2D" uid="uid://cbcxnuk6v0u7g" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_button_strip_right.tres" id="4_btn_a"]
+[ext_resource type="FontFile" uid="uid://7w30hgsdjs0l" path="res://assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="5_font"]
+[ext_resource type="FontFile" uid="uid://pnbgyluhlwbo" path="res://assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="6_title_font"]
+[ext_resource type="Texture2D" uid="uid://b4yo7psqqv4em" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/Slider_handle.tres" id="7_3b240"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_panel"]
+texture = ExtResource("2_gui_win")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_n"]
+texture = ExtResource("3_btn_n")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn_a"]
+texture = ExtResource("4_btn_a")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjeyn"]
+bg_color = Color(0.12941177, 0.21568628, 0.13333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b240"]
+bg_color = Color(0.54901963, 0.6745098, 0.05490196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hsfm"]
+bg_color = Color(0.11764706, 0.23921569, 0.12156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6busr"]
+bg_color = Color(0.54901963, 0.6745098, 0.05490196, 1)
+
+[node name="OptionsPanel" type="CanvasLayer" unique_id=222713540]
+layer = 10
+script = ExtResource("1_script")
+
+[node name="Bg" type="ColorRect" parent="." unique_id=1699238543]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.058824, 0.219608, 0.058824, 0.75)
+
+[node name="Center" type="Control" parent="." unique_id=1756081320]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Center" unique_id=459991093]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center/CenterContainer" unique_id=1111881938]
+texture_filter = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_panel")
+
+[node name="MarginContainer" type="MarginContainer" parent="Center/CenterContainer/Panel" unique_id=324275991]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center/CenterContainer/Panel/MarginContainer" unique_id=1721514710]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Center/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=727546407]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("6_title_font")
+theme_override_font_sizes/font_size = 30
+text = "Options"
+horizontal_alignment = 1
+
+[node name="MusicRow" type="HBoxContainer" parent="Center/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=2042626893]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MusicLabel" type="Label" parent="Center/CenterContainer/Panel/MarginContainer/VBoxContainer/MusicRow" unique_id=1273395305]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 22
+text = "Music"
+vertical_alignment = 1
+
+[node name="MusicBtn" type="Button" parent="Center/CenterContainer/Panel/MarginContainer/VBoxContainer/MusicRow" unique_id=1809010025]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(120, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+
+[node name="MusicSlider" type="HSlider" parent="Center/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1738473478]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("7_3b240")
+theme_override_icons/grabber_highlight = ExtResource("7_3b240")
+theme_override_icons/grabber_disabled = ExtResource("7_3b240")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_rjeyn")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_3b240")
+max_value = 1.0
+step = 0.01
+
+[node name="SfxRow" type="HBoxContainer" parent="Center/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=310525624]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="SfxLabel" type="Label" parent="Center/CenterContainer/Panel/MarginContainer/VBoxContainer/SfxRow" unique_id=147583818]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 22
+text = "Sound"
+vertical_alignment = 1
+
+[node name="SfxBtn" type="Button" parent="Center/CenterContainer/Panel/MarginContainer/VBoxContainer/SfxRow" unique_id=1559943823]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(120, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+
+[node name="SfxSlider" type="HSlider" parent="Center/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=973842344]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = ExtResource("7_3b240")
+theme_override_icons/grabber_highlight = ExtResource("7_3b240")
+theme_override_icons/grabber_disabled = ExtResource("7_3b240")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_3hsfm")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_6busr")
+max_value = 1.0
+step = 0.01
+
+[node name="CloseBtn" type="Button" parent="Center/CenterContainer/Panel/MarginContainer/VBoxContainer" unique_id=1062806739]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(150, 42)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("5_font")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_btn_n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_btn_a")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn_a")
+text = "Close"

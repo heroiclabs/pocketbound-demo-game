@@ -1,0 +1,15 @@
+addons/
+level_editor/
+levels/
+scenes/
+scripts/
+server/
+icon.svg
+icon.svg.import
+project.godot
+LICENSE
+README.md
+.git/
+.godot/
+.import/
+*.uid

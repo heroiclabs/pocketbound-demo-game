@@ -1,0 +1,51 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="FontFile" uid="uid://7w30hgsdjs0l" path="res://assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_basic"]
+[ext_resource type="FontFile" uid="uid://pnbgyluhlwbo" path="res://assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="2_title"]
+
+[resource]
+default_font = ExtResource("1_basic")
+default_font_size = 15
+
+Label/colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+Label/fonts/font = ExtResource("1_basic")
+Label/font_sizes/font_size = 15
+
+Button/colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+Button/colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+Button/colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+Button/colors/font_disabled_color = Color(0.188235, 0.384314, 0.188235, 1)
+Button/fonts/font = ExtResource("1_basic")
+Button/font_sizes/font_size = 15
+
+TitleLabel/colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+TitleLabel/fonts/font = ExtResource("2_title")
+TitleLabel/font_sizes/font_size = 20
+
+LightTitleLabel/colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+LightTitleLabel/fonts/font = ExtResource("2_title")
+LightTitleLabel/font_sizes/font_size = 20
+
+LargeLabel/colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+LargeLabel/fonts/font = ExtResource("1_basic")
+LargeLabel/font_sizes/font_size = 20
+
+SubLabel/colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+SubLabel/fonts/font = ExtResource("1_basic")
+SubLabel/font_sizes/font_size = 14
+
+MetaLabel/colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+MetaLabel/fonts/font = ExtResource("1_basic")
+MetaLabel/font_sizes/font_size = 13
+
+SectionLabel/colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+SectionLabel/fonts/font = ExtResource("1_basic")
+SectionLabel/font_sizes/font_size = 16
+
+HeadingLabel/colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+HeadingLabel/fonts/font = ExtResource("1_basic")
+HeadingLabel/font_sizes/font_size = 18
+
+LightLabel/colors/font_color = Color(0.607843, 0.737255, 0.058824, 1)
+LightLabel/fonts/font = ExtResource("1_basic")
+LightLabel/font_sizes/font_size = 15

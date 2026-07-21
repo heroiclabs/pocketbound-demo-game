@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://0686ruc5dftj"]
+
+[ext_resource type="FontFile" uid="uid://7w30hgsdjs0l" path="res://assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_sefda"]
+
+[resource]
+font = ExtResource("1_sefda")
+font_size = 22
+font_color = Color(0.1882353, 0.38431373, 0.1882353, 1)

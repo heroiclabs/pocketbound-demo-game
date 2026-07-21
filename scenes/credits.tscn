@@ -1,0 +1,429 @@
+[gd_scene format=3 uid="uid://7fl5t4krfkt4"]
+
+[ext_resource type="Script" path="res://scenes/credits.gd" id="1_credits_script"]
+[ext_resource type="Texture2D" uid="uid://bucg7iddgh37r" path="res://assets/sprites/POCKETBOUND logopixel.png" id="2_kyhnv"]
+[ext_resource type="FontFile" uid="uid://pnbgyluhlwbo" path="res://assets/Fonts/Pixelify_Sans/static/PixelifySans-Bold.ttf" id="3_ih6pn"]
+[ext_resource type="FontFile" uid="uid://7w30hgsdjs0l" path="res://assets/Fonts/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="4_7lgdl"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_window_light.tres" id="4_ooihk"]
+[ext_resource type="Texture2D" uid="uid://4yp1i67rxt4b" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_button_strip.tres" id="5_c6kru"]
+[ext_resource type="Texture2D" uid="uid://dy2iviru36ws3" path="res://assets/sprites/nakamalogo.png" id="5_ih6pn"]
+[ext_resource type="Texture2D" uid="uid://c3thj2jr2nih5" path="res://assets/sprites/cloudlogo.png" id="6_7lgdl"]
+[ext_resource type="Texture2D" uid="uid://cbcxnuk6v0u7g" path="res://assets/sprites/Spritesheets/FullTilemap_packed_atlas/gui_button_strip_right.tres" id="6_qbfqv"]
+[ext_resource type="Texture2D" uid="uid://ctlqven64ttrd" path="res://assets/sprites/godotlogo.png" id="7_c6kru"]
+[ext_resource type="Texture2D" uid="uid://3jq2rbhm1wek" path="res://assets/sprites/Spritesheets/cat_hug.png" id="8_c6kru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qbfqv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_panel"]
+texture = ExtResource("4_ooihk")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_x5q3x"]
+font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbfqv"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5q3x"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmdnh"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83ncp"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxold"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olp7g"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agqj7"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3h2w"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4uir"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g801i"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4t8yx"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hxgf"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t73l"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u62as"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyrtj"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(448, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqilg"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(480, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ect1l"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(512, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75vm1"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(544, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7c3n"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(576, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1a4f"]
+atlas = ExtResource("8_c6kru")
+region = Rect2(608, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d74sn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbfqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5q3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmdnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83ncp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxold")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olp7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agqj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3h2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e4uir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g801i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4t8yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hxgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t73l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u62as")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyrtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqilg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ect1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75vm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7c3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1a4f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ih6pn"]
+texture = ExtResource("5_c6kru")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7lgdl"]
+texture = ExtResource("6_qbfqv")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[node name="Credits" type="CanvasLayer" unique_id=222713540]
+layer = 10
+script = ExtResource("1_credits_script")
+
+[node name="Center" type="Control" parent="." unique_id=1756081320]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center" unique_id=709954931]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -20.0
+offset_right = 1.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Center/VBoxContainer" unique_id=1518146524]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_qbfqv")
+
+[node name="MarginContainer" type="MarginContainer" parent="Center/VBoxContainer/PanelContainer" unique_id=716907919]
+layout_mode = 2
+theme_override_constants/margin_top = 23
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center/VBoxContainer/PanelContainer/MarginContainer" unique_id=923388578]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Center/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1494666070]
+layout_mode = 2
+texture = ExtResource("2_kyhnv")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="Title" type="Label" parent="Center/VBoxContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1851838812]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.60784316, 0.7372549, 0.05882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 30
+text = "Is a game Made in 1 week for the Brackey’s Game Jam 2026.1"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Center/VBoxContainer" unique_id=459991093]
+layout_mode = 2
+
+[node name="Panel" type="PanelContainer" parent="Center/VBoxContainer/CenterContainer" unique_id=1111881938]
+texture_filter = 1
+custom_minimum_size = Vector2(881.85, 400)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_panel")
+
+[node name="MarginContainer" type="MarginContainer" parent="Center/VBoxContainer/CenterContainer/Panel" unique_id=324275991]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer" unique_id=2137013579]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=1537216910]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=308453159]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 24
+text = "Programing"
+horizontal_alignment = 1
+
+[node name="Title2" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=528217833]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 20
+text = "Andres Mendez (MechanicWizard)
+Fabio Sousa (DannyIsYog)"
+label_settings = SubResource("LabelSettings_x5q3x")
+horizontal_alignment = 1
+
+[node name="Title3" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1225800585]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 24
+text = "Game Design"
+horizontal_alignment = 1
+
+[node name="Title4" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=901219909]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 20
+text = "Enrique Perez (CasterCat)"
+label_settings = SubResource("LabelSettings_x5q3x")
+horizontal_alignment = 1
+
+[node name="Title5" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=976607031]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 24
+text = "Graphics"
+horizontal_alignment = 1
+
+[node name="Title6" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1860271684]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 20
+text = "CamGonzalez (CasterCat)
+Enrique Perez (CasterCat)"
+label_settings = SubResource("LabelSettings_x5q3x")
+horizontal_alignment = 1
+
+[node name="Title7" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=125365874]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 24
+text = "Sound effects"
+horizontal_alignment = 1
+
+[node name="Title8" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=869108217]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 20
+text = "Enrique Perez (CasterCat)"
+label_settings = SubResource("LabelSettings_x5q3x")
+horizontal_alignment = 1
+
+[node name="Title9" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=737721633]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 24
+text = "Music"
+horizontal_alignment = 1
+
+[node name="Title10" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=100471192]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 20
+text = "Fair N Square by William Benckert
+(Epidemic sound)"
+label_settings = SubResource("LabelSettings_x5q3x")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer" unique_id=1721514710]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="CenterContainer" type="CenterContainer" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2141605260]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CenterContainer" unique_id=829577006]
+layout_mode = 2
+
+[node name="nakamalogo" type="TextureRect" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=595260750]
+layout_mode = 2
+texture = ExtResource("5_ih6pn")
+
+[node name="cloudlogo" type="TextureRect" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CenterContainer/HBoxContainer" unique_id=1909155693]
+layout_mode = 2
+texture = ExtResource("6_7lgdl")
+
+[node name="Title" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=546977342]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 20
+text = "Powered by Nakama Open Source
+And hosted on Heroic Cloud
+https://heroiclabs.com/nakama/"
+horizontal_alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=299244752]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer/CenterContainer2" unique_id=1745892715]
+layout_mode = 2
+texture = ExtResource("7_c6kru")
+
+[node name="Title2" type="Label" parent="Center/VBoxContainer/CenterContainer/Panel/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1304022608]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18431373, 0.38431373, 0.1882353, 1)
+theme_override_fonts/font = ExtResource("3_ih6pn")
+theme_override_font_sizes/font_size = 20
+text = "Built in Godot Engine
+https://godotengine.org/"
+horizontal_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Center/VBoxContainer/CenterContainer/Panel" unique_id=1510682420]
+position = Vector2(819, 410)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_d74sn")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.63932675
+
+[node name="MenuBtn" type="Button" parent="Center" unique_id=531790786]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(120, 42)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -77.0
+offset_right = 168.0
+offset_bottom = -34.0
+grow_vertical = 0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_pressed_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_colors/font_hover_color = Color(0.058824, 0.219608, 0.058824, 1)
+theme_override_fonts/font = ExtResource("4_7lgdl")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_ih6pn")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7lgdl")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7lgdl")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7lgdl")
+text = "Back"
