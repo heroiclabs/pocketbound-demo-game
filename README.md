@@ -19,7 +19,7 @@ Nakama console: http://localhost:7351
 
 The Go module is a Nakama plugin, so it can't be built standalone. Use `go vet ./...` to check for errors.
 
-### One-time username lowercase migration
+### One-time lowercase username migration
 
 If you need to normalize all existing usernames in Postgres:
 
