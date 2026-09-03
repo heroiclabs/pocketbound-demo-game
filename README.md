@@ -1,8 +1,10 @@
-# Heroic Brackeys
+# Pocketbound - a demo game by Heroic Labs
 
 A grid-based puzzle game built with Godot 4.6 and a Nakama 3.37.0 backend. Players create levels with a tile editor and solve them by sliding tiles and walking a character from start to end. The server (Go plugin) handles level storage and per-level leaderboards.
 
-## Getting Started
+For a full walkthrough, see the [documentation](https://heroiclabs.com/docs/sample-projects/games/pocketbound/).
+
+## Getting started
 
 **Prerequisites:** Docker, Godot 4.6
 
@@ -15,9 +17,9 @@ docker-compose up --build      # Force rebuild after Go code changes
 
 Nakama console: http://localhost:7351
 
-The Go module is a Nakama plugin — it can't be built standalone. Use `go vet ./...` to check for errors.
+The Go module is a Nakama plugin, so it can't be built standalone. Use `go vet ./...` to check for errors.
 
-### One-Time Username Lowercase Migration
+### One-time username lowercase migration
 
 If you need to normalize all existing usernames in Postgres:
 
@@ -38,7 +40,7 @@ Open the project in the Godot 4.6 editor and press Play. Main scene: `res://scen
 | `Nakama` | `addons/com.heroiclabs.nakama/Nakama.gd` | Nakama client factory |
 | `OnlineSession` | `auth/nakama_session.gd` | Auth session + `call_rpc()` wrapper |
 
-## Project Structure
+## Project structure
 
 ```
 scenes/
@@ -101,7 +103,7 @@ LevelCreator.main_menu_requested → navigate_out()                  → MENU
 - Cell size: `PUZZLE_SIZE / grid_size` (512px / grid_size), recomputed dynamically in `_layout_for_viewport()`.
 - Constants in `level_player/scripts/level_config.gd`: `PUZZLE_SIZE=512`, `GRID_ORIGIN=(100,100)`, `SLIDE_DURATION=0.15`.
 
-### Component Registry
+### Component registry
 
 `shared/component_registry.json` defines 8 tile components shared between client and server:
 
@@ -118,7 +120,7 @@ LevelCreator.main_menu_requested → navigate_out()                  → MENU
 
 The client loads this via `scripts/component_registry.gd` (lazy static class). The Go server embeds it at build time (`//go:embed shared/component_registry.json`). Any component changes must update this shared file.
 
-### Level Player Module
+### Level player module
 
 Scene tree:
 ```
@@ -145,7 +147,7 @@ LevelPlayer (Node2D)         — level_player.gd
 4. `_build_tiles_from_world()` instantiates scene nodes for each entity
 5. `_spawn_player()` creates the player sprite and controller
 
-### Level Creator Module
+### Level creator module
 
 Scene tree:
 ```
@@ -165,7 +167,7 @@ LevelCreator (CanvasLayer)       — level_creator.gd
 
 **Save validation** runs both client-side (`_validate_level_before_save()`) and server-side (`validateLevelData` + `validatePlayableLevel` in `main.go`): exactly 1 START, 1 END, both WALKABLE, at least 2 walkable room tiles.
 
-### Client-Server Communication
+### Client-server communication
 
 All server calls go through `OnlineSession.call_rpc(id, payload)`, which wraps `NakamaClient.rpc_async()`, handles session refresh, retries on 401, and returns parsed JSON. RPCs are registered in `main.go:InitModule()`.
 
